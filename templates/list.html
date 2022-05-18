@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<link rel='stylesheet' type="text/css" href="{% static 'list.css' %}">
+{% endblock header %}
+
+{% block content %}
+
+<div class="hello">
+    <p><h1>ようこそ</h1></p>
+    <p>皆さん、一緒に未来教に入って幸せになりましょう</p>
+</div>
+
+<div class="score">
+<p class="view_score">現在のスコア{{ play_user.score }}</p>
+<p id="view_result">0人追加</p>
+</div>
+
+<button type="button" onclick="buttonClick()" class="btn_play">クリックして人数を増やしましょう<br>click here</button>
+
+<form action="{% url 'play' %}" method="POST">{% csrf_token %}
+    <input type="hidden" id="result" value=0 name="score_data">
+    <input type="submit">
+</form>
+
+<div class="ranking">
+<div class="midashi">
+    <h1>ランキング</h1>
+</div>
+
+<ul id="list" class="list">
+  {% for item in object_list  %}
+
+      <li>{{ item.player }}&emsp;{{ item.score }}</li>
+
+  {% endfor %}
+</ul>
+</div>
+
+<script>
+    function buttonClick(){
+        const view_result = document.getElementById("view_result");
+        const result = document.getElementById("result");
+
+        result.value++;
+        view_result.innerHTML = "" + result.value + "人追加";
+    }
+</script>
+{% endblock content %}

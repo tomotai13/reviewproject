@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<link rel='stylesheet' type="text/css" href="{% static 'login.css' %}">
+{% endblock header %}
+
+{% block content %}
+<body id="LoginForm">
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+<h1 class="form-heading">Login Form</h1>
+<div class="login-form">
+<div class="main-div">
+    <div class="panel">
+   <h2>Login</h2>
+   <p>Please enter your name and password</p>
+   </div>
+    <form id="Login" method="post">{% csrf_token %}
+
+        <div class="form-group">
+
+
+            <input type="text" class="form-control" id="inputEmail" placeholder="username" name="username_data">
+
+        </div>
+
+        <div class="form-group">
+
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password_data">
+
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+
+    </form>
+    </div>
+</div></div>
+
+
+
+
+	<script type="text/javascript">
+		</script>
+
+
+</body>
+{% endblock content %}

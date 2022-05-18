@@ -1,0 +1,74 @@
+body {
+    text-align: center;
+}
+
+.hello {
+    text-align: center;
+    background-color: #dda0dd;
+    width: 65%;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    margin:0 auto;
+    border-radius:30px;
+    margin-top: 1rem;
+    margin-bottom:1rem;
+}
+
+.score {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #7cfc00;
+}
+
+.midashi {
+    text-align: center;
+}
+.midashi h1 {
+    color: #ffa500;
+}
+.ranking {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #87ceeb;
+    margin-top: 2rem;
+}
+
+ul {
+  padding: 0;
+  position: relative;
+  margin-top:0.3rem;
+  counter-reset: rank;
+}
+
+ul li {
+  color: black;
+  border-left: solid 8px orange;/*左側の線*/
+  background: whitesmoke;/*背景色*/
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  padding: 0.5em;
+  list-style-type: none!important;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 0.3rem;
+}
+
+.list li::before {
+  counter-increment: rank;
+  content: counter(rank) "位 "
+}
+
+.view_score {
+    margin-top: 1rem;
+}
+
+.btn_play {
+    touch-action: none;
+    color: #fff;
+    background-color: #ffa07a;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+}
+
